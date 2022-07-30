@@ -1,0 +1,80 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/macaiki/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/macaiki",
+        "index": "apps/macaiki/src/index.html",
+        "baseHref": "/",
+        "main": "apps/macaiki/src/main.tsx",
+        "polyfills": "apps/macaiki/src/polyfills.ts",
+        "tsConfig": "apps/macaiki/tsconfig.app.json",
+        "assets": ["apps/macaiki/src/favicon.ico", "apps/macaiki/src/assets"],
+        "styles": ["apps/macaiki/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/macaiki/src/environments/environment.ts",
+              "with": "apps/macaiki/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "macaiki:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "macaiki:build:development"
+        },
+        "production": {
+          "buildTarget": "macaiki:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/macaiki/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/macaiki"],
+      "options": {
+        "jestConfig": "apps/macaiki/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
