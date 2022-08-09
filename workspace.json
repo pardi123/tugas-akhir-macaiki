@@ -3,6 +3,13 @@
   "version": 2,
   "projects": {
     "macaiki": "apps/macaiki",
-    "macaiki-e2e": "apps/macaiki-e2e"
+    "macaiki-e2e": "apps/macaiki-e2e",
+    "macaiki-forgot-password": "libs/macaiki/forgot-password",
+    "macaiki-home": "libs/macaiki/home",
+    "macaiki-login": "libs/macaiki/login",
+    "macaiki-profile": "libs/macaiki/profile",
+    "macaiki-register": "libs/macaiki/register",
+    "macaiki-shared-layout": "libs/macaiki/shared/layout",
+    "macaiki-shared-ui": "libs/macaiki/shared/ui"
   }
 }

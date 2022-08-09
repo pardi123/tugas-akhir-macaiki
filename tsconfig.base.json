@@ -14,7 +14,19 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@macaiki/macaiki/forgot-password": [
+        "libs/macaiki/forgot-password/src/index.ts"
+      ],
+      "@macaiki/macaiki/home": ["libs/macaiki/home/src/index.ts"],
+      "@macaiki/macaiki/login": ["libs/macaiki/login/src/index.ts"],
+      "@macaiki/macaiki/profile": ["libs/macaiki/profile/src/index.ts"],
+      "@macaiki/macaiki/register": ["libs/macaiki/register/src/index.ts"],
+      "@macaiki/macaiki/shared/layout": [
+        "libs/macaiki/shared/layout/src/index.ts"
+      ],
+      "@macaiki/macaiki/shared/ui": ["libs/macaiki/shared/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
